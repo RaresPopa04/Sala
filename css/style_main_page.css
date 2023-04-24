@@ -1,0 +1,367 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --lime-green:#8CFF00;
+    --blue:#006E86;
+    --dark-green:#00BD95;
+    --dark-blue:#2F4858;
+}
+body{
+    background-color: black;
+    color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+.table{
+    margin-top: 10vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+.cap-tabel{
+    
+    font-family: 'Inter' ,sans-serif;
+    color: var(--blue);
+
+}
+.rand{
+    margin-top: 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.col:not(.cap-tabel)
+{
+    color:var(--dark-green);
+}
+.titlu-zi{
+    
+    font-family: 'Inter' ,sans-serif;
+    color:var(--lime-green);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap:10px
+}
+.titlu-sectiune{
+    
+    font-family: 'Inter' ,sans-serif;
+    color:var(--blue);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.subtitlu{
+    
+    font-family: 'Inter' ,sans-serif;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.edit-button{
+    cursor: pointer;
+    font-family: 'Inter' ,sans-serif;
+    padding: 10px 20px;
+    background-color: var(--lime-green);
+    transition: background-color 100ms ease-in;
+
+}
+.edit-button:hover{
+    background-color: #25c20c;
+}
+.edit-button a{
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: var(--dark-blue);
+}
+
+.buton-container{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+
+/* animatie pentru buton */
+.buton{    
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.buton::before{
+    content: "";
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    right: 100%;
+    transition: right 100ms ease;
+    transition-delay: 150ms;
+}
+.buton::after{
+    content: '';
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    left:100%;
+    top: 0;
+    transition: left 100ms ease;
+    transition-delay: 300ms;
+}
+.buton:hover::before{
+    right: 0;
+}
+.buton:hover::after{
+    left: 0;
+}
+.buton .bar-1{
+    width: 1px;
+    background-color: white;
+    height: 0;
+    position: absolute;
+    transition: height 100ms ease;
+    transition-delay: 200ms;
+}
+.buton:hover .bar-1{
+    height: 100%;
+    transition-delay: 100ms;
+}
+.buton .bar-2{
+    width: 1px;
+    background-color: white;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transition: top 100ms ease;
+    transition-delay: 100ms;
+}
+.buton:hover .bar-2{
+    top: 0%;
+    transition-delay:300ms ;
+}
+
+.container-zile{
+    margin-bottom: 70px;
+    margin-top: 40px;
+}
+.continer-zile:last-of-type{
+    margin-bottom: 20px;
+}
+.deAscuns{
+    display: none;
+}
+.linie{ 
+    height: .5px;
+    width: 100%;
+    margin: 0 auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: var(--lime-green);
+}
+.repetari{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.greutati{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.container-cu-minus{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.container-cu-minus .minus-serie{
+    margin-left: 10px;
+}
+.minus-serie i{
+    cursor: pointer;
+    color:  red;
+}
+.minus-serie i:hover{
+    color:  rgb(165, 8, 8);
+}
+.plus-principal {
+    font-family: 'Inter' ,sans-serif;
+    color: var(--lime-green);
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.2rem;
+}
+.plus-principal .plus-button{
+    
+    padding: 10px 20px;
+}
+input[type=text]{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: var(--blue);
+    border-bottom: 2px solid var(--lime-green);
+    height: 30px;
+    border-radius: 4px;
+}
+input[type=text]:focus{
+    border:2px solid var(--lime-green);
+}
+.minus-exercitiu{
+    cursor: pointer;
+    margin-right: 5px;
+    color: red;
+}
+.minus-exercitiu:hover{
+    color:  rgb(165, 8, 8);
+}
+.plus-serii{
+    cursor: pointer;
+    margin-right: 5px;
+}
+.plus-serii:hover{
+    color: var(--dark-blue);
+}
+.titlu-zi i{
+    color:red;
+    cursor: pointer;
+}
+.titlu-zi i:hover{
+    color:red;
+    color:  rgb(165, 8, 8);
+}
+.titlu-zi .fa-plus-circle{
+    color: var(--dark-green);
+    cursor: pointer;
+}
+
+.titlu-zi .fa-plus-circle:hover{
+    color: var(--dark-blue);
+}
+input[type=submit]
+{
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #8CFF00;
+    border: none;
+    color: var(--dark-blue);
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Inter' ,sans-serif;
+    padding: 10px 20px;
+    transition: background-color 100ms ease-in;
+    
+}
+input[type=submit]:hover{
+    background-color: #25c20c;
+}
+.container-fara-cont{
+    padding: 30px 50px;
+    background-color:var(--dark-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    font-family: 'Inter' ,sans-serif;
+}
+.container-fara-cont ul{
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.container-fara-cont ul li{
+    margin-left: 0;
+}
+.eroare{
+    color: red;
+    margin-bottom: 5px;
+}
+.grupare{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.grupare-1{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.grupare-operatii{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap :10px;
+}
+@media only screen and (max-width: 600px) {
+        input{
+            width: 150px;
+        }
+        .rand input{
+            width: 100px;
+        }
+        .rand .greutati input {
+            width: 50px;
+        }
+        .rand .repetari input {
+            width: 50px;
+        }
+        .rand{
+            display: flex;
+            flex-direction: column;
+        }
+        .col{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+}

@@ -41,6 +41,9 @@
                                     else if($error==="preaLung")
                                     {
                                         $deAfisat = "Input prea lung";
+                                    }else if($error === "wrongPass")
+                                    {
+                                        $deAfisat = "Parola gresita";
                                     }
                                     echo  "<div class = 'eroare' style = 'color:red; margin-bottom:5px; text-align:center;'>".$deAfisat."</div>";
                                 }

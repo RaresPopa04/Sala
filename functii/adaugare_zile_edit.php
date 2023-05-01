@@ -11,7 +11,6 @@
              <div class = "subtitlu">
                  <div class = "titlu-zi"> 
                  <div class = "grupare-operatii">
-                    <div class="plus-'.$row['ID'].' plus-ex"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
                     <div class="minus-'.$row['ID'].' minus-zi"><i class="fa fa-trash" aria-hidden="true"></i></div>
                  </div>
                  Ziua 
@@ -19,6 +18,7 @@
              </div>
              <div class="rand">
                  <div class="col cap-tabel">
+                    <div class="plus-'.$row['ID'].' plus-ex"><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
                     <div class ="titlu-sectiune">Exercitiu</div>
                  </div>
                  <div class="grupare-1">

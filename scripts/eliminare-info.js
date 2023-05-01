@@ -21,8 +21,8 @@ function minusSets(element,divDeSters)
         elemDeStersDinBaza.classList.add("deAscuns");
         if(element.classList[2]===undefined)
             divDeSters.appendChild(elemDeStersDinBaza);
-        divRepetari.remove();
-        divGreutate.remove();
+        divRepetari.parentElement.parentElement.remove();
+        divGreutate.parentElement.remove();
         element.remove();
 
     })

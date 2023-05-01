@@ -25,10 +25,10 @@
                     $id = $_SESSION['ID'];
                     require "../functii/adaugare_zile_edit.php";
                     require "../functii/populare_zile_edit.php";
-                    
+
                     if($cnt ===0)
                     {
-                        echo "<div class ='container-fara-cont'>
+                        echo "<div class ='container-fara-cont' style = 'text-align:center'>
                             <h1>Nu ai zile adaugate</h1>
                             <h1><i class='fa fa-arrow-down' aria-hidden='true'></i><h1>
                         </div>";

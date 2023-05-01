@@ -70,6 +70,7 @@ body::-webkit-scrollbar{
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap:10px
 }
 .titlu-sectiune{
@@ -203,8 +204,6 @@ a{
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 .container-cu-minus{
     width: 100%;
@@ -269,13 +268,21 @@ input[type=text]:focus{
     color:red;
     color:  rgb(165, 8, 8);
 }
-.titlu-zi .fa-plus-circle{
+.cap-tabel .fa-plus-circle{
     color: var(--dark-green);
     cursor: pointer;
 }
 
-.titlu-zi .fa-plus-circle:hover{
+.cap-tabel .fa-plus-circle:hover{
     color: var(--dark-blue);
+}
+.cap-tabel:first-of-type{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+    gap:10px;
+    align-items: center;
+    
 }
 input[type=submit]
 {
@@ -341,18 +348,22 @@ input[type=submit]:hover{
     align-items: center;
     gap :10px;
 }
-@media only screen and (max-width: 600px) {
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 0.5; /* Firefox */
+}
+@media only screen and (max-width: 800px) {
         input{
             width: 150px;
         }
         .rand input{
-            width: 100px;
+            width: 300px;
         }
         .rand .greutati input {
-            width: 50px;
+            width: 100px;
         }
         .rand .repetari input {
-            width: 50px;
+            width: 100px;
         }
         .rand{
             display: flex;
@@ -364,4 +375,8 @@ input[type=submit]:hover{
             justify-content: center;
             flex-direction: column;
         }
+        .titlu-zi input{
+            width: 350px;
+        }
+
 }

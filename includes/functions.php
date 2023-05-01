@@ -145,20 +145,6 @@ function modficareExercitiu($idEx,$numeEx,$conn)
     
     mysqli_stmt_close($stmt);
 }
-function modificareGreutate($idGrupa,$greutate,$conn)
-{
-    $query = "UPDATE seturi SET greutate=? WHERE ID=?";
-    $stmt = mysqli_stmt_init($conn);
-    if(!mysqli_stmt_prepare($stmt,$query))
-    {
-        header("location:..\pages\edit.php?error=tryAgain");
-        exit();
-    }
-    mysqli_stmt_bind_param($stmt,"ss",$greutate,$idGrupa);
-    mysqli_stmt_execute($stmt);
-    
-    mysqli_stmt_close($stmt);
-}
 function modficareSet($idSet,$greutate,$repetari,$conn)
 {
     $query = "UPDATE seturi SET repetari=?,greutate=? WHERE ID=?";
@@ -197,7 +183,7 @@ function adaugareSet($idSet,$idEx,$greutate,$repetare,$conn)
         header("location:..\pages\edit.php?error=tryAgain");
         exit();
     }
-    mysqli_stmt_bind_param($stmt,"ssss",$idSet,$idEx,$greutate,$repetare);
+    mysqli_stmt_bind_param($stmt,"ssss",$idSet,$idEx,$repetare,$greutate);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
 }

@@ -11,17 +11,14 @@ foreach($_POST as $key => $value) {
         $bucati = explode('-',$key);
         $idZi = $bucati[2];
         $numeZi = $value;
-        if(strlen($numeZi))
+        if(sizeof($bucati)==3)
         {
-            if(sizeof($bucati)==3)
-            {
-                modificareZi($idZi,$numeZi,$conn);
-            }
-            else
-            if(sizeof($bucati)==4)
-            {
-                adaugareZi($idZi,$numeZi,$conn);
-            }
+            modificareZi($idZi,$numeZi,$conn);
+        }
+        else
+        if(sizeof($bucati)==4)
+        {
+            adaugareZi($idZi,$numeZi,$conn);
         }
         
     }
